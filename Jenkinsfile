@@ -11,7 +11,7 @@ pipeline {
       parallel {
         stage('test') {
           steps {
-            sh 'yum install -y httpd'
+            sh 'sudo yum install -y httpd'
             sh 'sudo systemctl start httpd'
           }
         }
