@@ -7,5 +7,22 @@ pipeline {
       }
     }
 
+    stage('test') {
+      parallel {
+        stage('test') {
+          steps {
+            sh 'yum install -y httpd'
+          }
+        }
+
+        stage('test-1') {
+          steps {
+            sh 'ls -al'
+          }
+        }
+
+      }
+    }
+
   }
 }
